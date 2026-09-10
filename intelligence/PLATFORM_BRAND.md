@@ -52,7 +52,25 @@ runbook ❌, callminder ❌, jobminder ❌, gaffer ❌, yardbook ❌.
    tradie brand is un-ownable in search and conversation.
 3. **Batch 2/3/4 taken names** — dead on RDAP, no further work.
 
-## LIVE SHORTLIST (collision checks pending — do before attachment)
+## DECISION (2026-09-10): sparkagent
+
+**sparkagent.co.uk: AVAILABLE** (RDAP high-confidence, no DNS). sparkagent.com
+taken (acceptable per evspark precedent — UK trust domain is .co.uk).
+
+- Collision: PASS. No UK trades company; no .co.uk site. Nearest hits all
+  distant: SparkPoint "SparkAgent" (PH crypto tooling), SPARK NEC / Sparky AI /
+  SparkyPal / SparkShift (US NEC/IBEW apps), Mr Sparky (US franchise). Crowded
+  "spark*" US namespace noted; zero UK collision.
+- Socials (Apify-verified): npm/PyPI/crates/Bluesky/Telegram/GitLab/
+  SoundCloud/Pinterest available. TAKEN: GitHub, YouTube, TikTok, X, Snapchat.
+  MANUAL CHECK PENDING (most tradie-important): Facebook, Instagram
+  (+ Reddit/Twitch/Threads). Fallbacks if taken: sparkagentuk, teamsparkagent.
+- Name logic: spark (the trade's own word) + agent (what it is — their agent).
+  Faces both sides: customers meet "the agent," sparkies get "their agent."
+- STATUS: decided, NOT purchased. Buy gate: FB/IG manual check + Companies
+  House/IPO check + human `confirmed:true`. (~£10/yr + sparkagent.uk if free.)
+
+## LIVE SHORTLIST (superseded by decision above — kept for record)
 
 | Name | .co.uk | .com | Angle |
 |------|--------|------|-------|
