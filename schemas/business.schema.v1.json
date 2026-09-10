@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ab.kernel/schemas/business.schema.v1.json",
+  "title": "Business",
+  "description": "A business compiled by the ab kernel. Pinned to the intelligence that justified it.",
+  "type": "object",
+  "required": [
+    "business_id", "name", "country", "track", "state",
+    "intelligence", "economics"
+  ],
+  "properties": {
+    "business_id": { "type": "string", "pattern": "^ab-[0-9]{3}$" },
+    "name": { "type": "string", "description": "Customer-facing brand, e.g. EvSpark Electrical" },
+    "slug": { "type": "string", "description": "Short handle, e.g. evspark" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "track": { "type": "string", "enum": ["d2c_parts", "services", "hybrid"] },
+    "vertical": { "type": "string", "description": "e.g. ev_charger_install" },
+    "state": {
+      "type": "string",
+      "enum": ["IDEA", "SCORED", "BRANDED", "PROVISIONED", "KERNELLED", "SHIELDED", "STAGED", "LIVE", "OPERATING", "KILLED"]
+    },
+    "intelligence": {
+      "type": "object",
+      "required": ["campaign_version_id", "evidence_snapshot_id", "rubric_version_id"],
+      "properties": {
+        "campaign_version_id": { "type": "string" },
+        "evidence_snapshot_id": { "type": "string" },
+        "rubric_version_id": { "type": "string" },
+        "mechanisms": { "type": "array", "items": { "type": "string" } },
+        "theses": { "type": "array", "items": { "type": "string" } },
+        "kill_check": { "type": "string", "description": "Why this survived the kill-check, or KILLED reason ref" }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "domain": { "type": "string" },
+        "registrar_receipt": { "type": "string", "description": "Path under receipts/" },
+        "zone_id": { "type": "string" },
+        "emails": { "type": "array", "items": { "type": "string" } },
+        "phone_e164": { "type": "string" },
+        "phone_receipt": { "type": "string" },
+        "handles": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "kernel": {
+      "type": "object",
+      "properties": {
+        "config_path": { "type": "string", "description": "e.g. businesses/ab-001/kernel.yaml" },
+        "autonomy": { "type": "string", "enum": ["observe", "semi_auto", "full_auto"] },
+        "locale": { "type": "string", "description": "e.g. en-GB" }
+      }
+    },
+    "shield": {
+      "type": "object",
+      "properties": {
+        "csec_run": { "type": "string", "description": "Path to digest-pinned JSONL under receipts/" },
+        "held": { "type": "integer" },
+        "breached": { "type": "integer" },
+        "waivers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["probe", "reason"],
+            "properties": {
+              "probe": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "economics": {
+      "type": "object",
+      "required": ["aov_gbp", "contribution_per_unit_gbp", "breakeven_units_per_month"],
+      "properties": {
+        "aov_gbp": { "type": "number" },
+        "contribution_per_unit_gbp": { "type": "number" },
+        "breakeven_units_per_month": { "type": "number" },
+        "cac_assumption_gbp": { "type": "number" },
+        "notes": { "type": "string" }
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string", "description": "e.g. OZEV-authorised installer" },
+          "status": { "type": "string", "enum": ["not_started", "applied", "held", "blocked"] },
+          "ref": { "type": "string" }
+        }
+      }
+    },
+    "created_at": { "type": "string", "format": "date" },
+    "updated_at": { "type": "string", "format": "date" }
+  }
+}

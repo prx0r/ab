@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ab.kernel/schemas/generation-run.schema.v1.json",
+  "title": "GenerationRun",
+  "description": "Record of one ab kernel run: stage-by-stage outputs with evidence digests.",
+  "type": "object",
+  "required": ["run_id", "business_id", "started_at", "stages"],
+  "properties": {
+    "run_id": { "type": "string", "description": "e.g. ab-001-r03" },
+    "business_id": { "type": "string", "pattern": "^ab-[0-9]{3}$" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "ended_at": { "type": "string", "format": "date-time" },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stage", "status", "at"],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": ["SCORE", "BRAND", "PROVISION", "KERNEL", "SHIELD", "STAGE", "LIVE", "OPERATE"]
+          },
+          "status": { "type": "string", "enum": ["pass", "fail", "blocked", "waived", "skipped"] },
+          "at": { "type": "string", "format": "date-time" },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["path", "sha256"],
+              "properties": {
+                "path": { "type": "string" },
+                "sha256": { "type": "string" },
+                "note": { "type": "string" }
+              }
+            }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "action": { "type": "string", "enum": ["advance", "hold", "kill", "loop_back"] },
+        "reason": { "type": "string" }
+      }
+    }
+  }
+}

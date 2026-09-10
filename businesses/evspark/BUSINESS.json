@@ -1,0 +1,57 @@
+{
+  "business_id": "ab-001",
+  "name": "EvSpark Electrical",
+  "slug": "evspark",
+  "country": "GB",
+  "track": "services",
+  "vertical": "ev_charger_install",
+  "state": "IDEA",
+  "intelligence": {
+    "campaign_version_id": "drop:campaigns/active/uk-ev-charger.md@2026-09-07",
+    "evidence_snapshot_id": "TBD-S1 (HCC_V2 sources 20-21, GOV.UK EVCI 1-Jul-2026, EV Cable Hub census 2026)",
+    "rubric_version_id": "drop:docs/HCC_V2.md@2026-09-07",
+    "mechanisms": [
+      "WARRANTY_EXPIRY_CHANNEL_FLIP",
+      "RISK_PRICER_SUBSIDIZES_PREVENTION",
+      "REMOVABLE_CONTROL_DELOCALIZES_REPAIR"
+    ],
+    "theses": [
+      "drop:THESIS.md (compatibility commerce compiler)",
+      "drop:docs/THESIS_REFINED.md (CUSTOMER_PURCHASABLE_SHARE, self-service ratio)",
+      "drop:docs/HCC_V2.md (#11 PIVOT to PCB repair + technician orchestration)",
+      "drop:aithesis.md (permission scarcity: OZEV authorisation)",
+      "breadup:docs/THESIS.md (value text search cannot see)"
+    ],
+    "kill_check": "S1 pending. Standing hypothesis: survives (services track sidesteps G4 D2C failure; permission path exists via OZEV application; no incumbent owns grant-paperwork + triage + landlord bundle)."
+  },
+  "identity": {
+    "domain": "evspark.co.uk",
+    "emails": ["hello@evspark.co.uk", "support@evspark.co.uk"],
+    "handles": {}
+  },
+  "kernel": {
+    "config_path": "businesses/evspark/kernel.yaml",
+    "autonomy": "semi_auto",
+    "locale": "en-GB"
+  },
+  "shield": {
+    "held": 0,
+    "breached": 0,
+    "waivers": []
+  },
+  "economics": {
+    "aov_gbp": 892,
+    "contribution_per_unit_gbp": 250,
+    "breakeven_units_per_month": 8,
+    "cac_assumption_gbp": 60,
+    "notes": "Targets for S6 verification. Grant jobs (to Mar 2027) carry the sprint; non-grant floor CM 180."
+  },
+  "permissions": [
+    { "name": "OZEV-authorised installer", "status": "not_started", "ref": "PLAN.md Phase 0-3" },
+    { "name": "NICEIC/NAPIT Part P route", "status": "not_started", "ref": "PLAN.md (subcontract bridge)" },
+    { "name": "Public liability + PI insurance", "status": "not_started", "ref": "PLAN.md S6 checklist" },
+    { "name": "ICO registration / GDPR", "status": "not_started", "ref": "KERNEL.md policy.data" }
+  ],
+  "created_at": "2026-09-10",
+  "updated_at": "2026-09-10"
+}
