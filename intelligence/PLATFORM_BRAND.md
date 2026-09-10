@@ -67,8 +67,10 @@ taken (acceptable per evspark precedent — UK trust domain is .co.uk).
   (+ Reddit/Twitch/Threads). Fallbacks if taken: sparkagentuk, teamsparkagent.
 - Name logic: spark (the trade's own word) + agent (what it is — their agent).
   Faces both sides: customers meet "the agent," sparkies get "their agent."
-- STATUS: decided, NOT purchased. Buy gate: FB/IG manual check + Companies
-  House/IPO check + human `confirmed:true`. (~£10/yr + sparkagent.uk if free.)
+- STATUS: decided, NOT purchased. Buy gate: Facebook manual check
+  (Instagram ✅ human-verified free as sparkagent.co.uk, 2026-09-10) +
+  Companies House/IPO check + human `confirmed:true`. (~£10/yr + sparkagent.uk
+  if free.)
 
 ## LIVE SHORTLIST (superseded by decision above — kept for record)
 
